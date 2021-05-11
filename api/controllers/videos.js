@@ -21,7 +21,7 @@ exports.getAllVideos = (req, res, next) => {
     });
 };
 
-exports.getVideo = () => {
+exports.getVideo = (req, res, next) => {
   Video.findByPk(req.params.vidHash)
     .then((video) => {
       res.status(200).json(video);
