@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  background-color: #d6c1c3;
+  display: flex;
+  align-items: center;
+  padding: 0.7%;
+  font-family: Avenir Next;
+}
+
+nav img {
+  height: 5em;
+  width: 5em;
+  margin: -1em;
+  float: left;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+
+  margin-right: 1em;
+  margin-left: 1em;
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.2em;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+}
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+nav ul li {
+  margin-right: 1em;
+}
+
+p.about_DFD {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.7em;
+  line-height: 2em;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  color: #000000;
+}
+p.about {
+  width: 20em;
+  height: 10em;
+
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.05em;
+
+  color: #000000;
+}
+
+div.Lbox {
+  position: absolute;
+  width: 32em;
+  height: 32em;
+  left: 60%;
+  top: 10em;
+  border-radius: 1em;
+
+  background: #c1d6c6;
+}
+
+div.desc {
+  position: absolute;
+  left: 10%;
+  top: 15em;
+}
+.container {
+  padding: 8px;
+}
+
+.upload-div {
+  background-color: #c1d6c6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 5% 15%;
+  min-height: 30rem;
+  padding-bottom: 2%;
+}
+.myForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+label.myLabel input[type="text"] {
+  position: absolute;
+  top: -100%;
+  font-size: 20px;
+}
+.myLabel {
+  border: 0.15em solid #aaa;
+  border-radius: 0.3em;
+  padding: 0.15em 0.35em;
+  margin: 0.15em;
+  background: #ddd;
+  display: inline-block;
+  text-align: center;
+  font-size: 20px;
+}
+.myLabel:hover {
+  background: #ccc;
+}
+.myLabel:active {
+  background: #ccf;
+}
+.myLabel :invalid + span {
+  color: #a44;
+}
+.myLabel :valid + span {
+  color: #4a4;
+}
+
+div.form {
+  margin: auto;
+  width: 35%;
+}
+
+.form h1 {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4em;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.05em;
+
+  color: #000000;
+  margin: 0.3em 0;
+}
+.form p {
+  font-family: Avenir;
+}
+.form input {
+  font-size: 1em;
+  font-family: Avenir;
+  background-color: #c4c4c4;
+  padding: 1em 0.66em;
+  width: 100%;
+  border: 1;
+  border-radius: 0.35em;
+  outline: none;
+}
+.form label {
+  font-size: 18px;
+}
+.form .button {
+  display: flex;
+  justify-content: center;
+}
+.form button {
+  font-size: 1.15em;
+  font-weight: bold;
+  margin: 1.3em 0;
+  padding: 0.66em 1em;
+  width: 50%;
+  border: 0;
+  border-radius: 0.35em;
+  background-color: #b6d6d0;
+}
+.form button:hover {
+  color: grey;
+}
+.info {
+  text-align: center;
+  background-color: #b6d6d0;
+  font-size: 18px;
+  width: 100;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+.video {
+  padding: 40px;
+}
