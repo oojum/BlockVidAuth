@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const fs = require("fs");
-const fsp = require("fs/promises");
+const fsp = require("fs").promises;
 const path = require("path");
 
 const sequelize = require("./api/util/database");

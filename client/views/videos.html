@@ -1,9 +1,22 @@
 <div>
   <ul>
     <li ng-repeat="video in videosList">
-        <h2>{{video.title}}</h1>
-        <h3>{{video.vidHash}}</h3>
-        <p>{{video.userEthAddress}}</p>
+    <div class="videos-container">
+      <div class="video-box">
+        <div class="video-preview">
+          <video controls (click) = "toggleVideo" #videoPlayer>
+            <source src="{{video.vidHash}}" type="video/mp4">
+              Browser Not Supported
+          </video>
+        </div>
+        <div class="video-info-container">
+          <h2>{{video.title}}</h2>
+          <p>Hash={{video.vidHash}}<p>
+          <p>EtheruemAddress={{video.userEthAddress}}</p>
+        </div>
+      </div>
+    </div>  
     </li>
   </ul>
+</div>
 </div>

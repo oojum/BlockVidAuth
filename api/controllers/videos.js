@@ -1,6 +1,6 @@
 const sha256File = require("sha256-file");
 const fs = require("fs");
-const fsp = require("fs/promises");
+const fsp = require("fs").promises;
 const path = require("path");
 const appRoot = require("app-root-path");
 
