@@ -3,6 +3,10 @@ const fs = require("fs");
 const fsp = require("fs/promises");
 const path = require("path");
 const appRoot = require("app-root-path");
+const url = require("url");
+// const axios = require("axios").default;
+const unirest = require("unirest");
+const FormData = require("form-data");
 
 const Video = require("../models/video");
 const User = require("../models/user");
@@ -24,7 +28,10 @@ exports.getAllVideos = (req, res, next) => {
 exports.getVideo = (req, res, next) => {
   Video.findByPk(req.params.vidHash)
     .then((video) => {
-      res.status(200).json(video);
+      const response = {
+        video: video,
+      };
+      res.status(200).json(response);
     })
     .catch((err) => {
       res.status(500).json(err);
@@ -34,6 +41,8 @@ exports.getVideo = (req, res, next) => {
 exports.addVideo = (req, res, next) => {
   req.pipe(req.busboy);
   const formData = {};
+  let isFake;
+  let confidence;
 
   req.busboy.on("file", (fieldname, file, filename) => {
     console.log("File upload started.");
@@ -60,36 +69,46 @@ exports.addVideo = (req, res, next) => {
               .call({ from: formData["userAddress"] });
           })
           .then((result) => {
-            // console.log(result);
             if (result) {
-              return res.status(400).json({ message: "Video already exists." });
+              console.log("Video already exists.");
+              return Promise.reject({ message: "Video already exists." });
             }
 
+            return unirest
+              .post("http://127.0.0.1:8000/api/predict")
+              .headers({ "Content-Type": "multipart/form-data" })
+              .field("sequence_length", 10)
+              .attach("upload_video_file", newPath);
+          })
+          .then((response) => {
+            if (response.body.output === "REAL") {
+              isFake = false;
+            } else if (response.body.output === "FAKE") {
+              isFake = true;
+            }
+            confidence = response.body.confidence;
+
             return vidAuthContract.methods
-              .addNewVid(sum)
-              .send({ from: formData["userAddress"], gas: 3000000 })
-              .then(() => {
-                return User.findByPk(formData["userAddress"]);
-                // return Video.create({
-                //   vidHash: sum,
-                //   title: formData["title"],
-                //   vidPath: newPath,
-                //   ownerAddress: formData["userAddress"],
-                // });
-              })
-              .then((user) => {
-                return user.createVideo({
-                  vidHash: sum,
-                  title: formData["title"],
-                  vidPath: newPath,
-                });
-              })
-              .then((video) => {
-                const response = {
-                  video: video,
-                };
-                return res.status(201).json(response);
-              });
+              .addNewVid(sum, response.body.output)
+              .send({ from: formData["userAddress"], gas: 3000000 });
+          })
+          .then(() => {
+            return User.findByPk(formData["userAddress"]);
+          })
+          .then((user) => {
+            return user.createVideo({
+              vidHash: sum,
+              title: formData["title"],
+              isFake: isFake,
+              confidence: confidence,
+              vidPath: decodeURIComponent(url.format(newPath)),
+            });
+          })
+          .then((video) => {
+            const response = {
+              video: video,
+            };
+            return res.status(201).json(response);
           })
           .catch((err) => {
             res.status(500).json(err);

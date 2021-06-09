@@ -1,0 +1,63 @@
+<div class="upload-div">
+  <div class="form-logo-box">
+    <img src="../assets/logo.png" />
+  </div>
+  <div ng-show="!isMetamaskInstalled">
+    <h2 style="margin: 1em">Please install Metamask to continue.</h2>
+  </div>
+  <div class="myForm" ng-show="isMetamaskInstalled">
+    <div class="fact-box">
+      <p>
+        <b>{{factHead}}</b><br /><br />
+        {{fact}}
+      </p>
+    </div>
+    <form class="form" name="addUser">
+      <div class="myForm">
+        <h2>Enter your Details.</h2>
+        <label for="firstName" class="myLabel"> First Name: </label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          ng-model="user.firstName"
+          placeholder="Enter your firstname"
+          required
+        /><br />
+        <label for="lastName" class="myLabel"> Last Name: </label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          ng-model="user.lastName"
+          placeholder="Enter your lastname"
+          required
+        /><br />
+        <label for="userEmail" class="myLabel"> E-mail: </label>
+        <input
+          type="email"
+          id="userEmail"
+          name="userEmail"
+          ng-model="user.emailId"
+          placeholder="Enter your Email"
+          required
+        />
+        <br />
+        <label for="ethAddress" class="myLabel"> Etheruem Address: </label>
+        <input
+          type="text"
+          id="ethAddress"
+          value="{{user.ethAddress}}"
+          required
+          readonly
+          style="color: gray"
+        />
+      </div>
+      <div class="button">
+        <button type="submit" id="userSubmit" ng-click="submitForm()">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

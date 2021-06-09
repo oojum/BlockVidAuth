@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
 }
-
+/*for nav bar*/
 nav {
   background-color: #d6c1c3;
   display: flex;
@@ -44,7 +44,7 @@ nav ul li a:hover {
 nav ul li {
   margin-right: 1em;
 }
-
+/*for about page*/
 p.about_DFD {
   font-family: Avenir Next;
   font-style: normal;
@@ -93,8 +93,8 @@ div.desc {
 .container {
   padding: 8px;
 }
-
-.upload-div {
+/*for form*/
+/*.upload-div {
   background-color: #c1d6c6;
   display: flex;
   flex-direction: column;
@@ -139,14 +139,14 @@ label.myLabel input[type="text"] {
 
 div.form {
   margin: auto;
-  width: 35%;
+  width: 80%;
 }
-
-.form h1 {
+*/
+.form h2 {
   font-family: Avenir;
   font-style: normal;
   font-weight: normal;
-  font-size: 4em;
+  font-size: 3em;
   display: flex;
   justify-content: center;
   letter-spacing: 0.05em;
@@ -163,12 +163,17 @@ div.form {
   background-color: #c4c4c4;
   padding: 1em 0.66em;
   width: 100%;
-  border: 1;
+  border: 5px solid #c1d6c6;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-radius: 0.35em;
   outline: none;
+  text-align: center;
 }
 .form label {
   font-size: 18px;
+  font-family: Avenir;
 }
 .form .button {
   display: flex;
@@ -196,6 +201,110 @@ div.form {
 ::-webkit-input-placeholder {
   text-align: center;
 }
-.video {
-  padding: 40px;
+.upload-div {
+  background: #ffffff;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: fit-content;
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  color: #000000;
+  border-radius: 1em;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.form-logo-box {
+  width: 45%;
+  background: #c1d6c6;
+  padding: 90px 0;
+  border-radius: 1em;
+  border-right: 5px solid rgba(30, 30, 30, 0.8);
+}
+.fact-box {
+  margin: 1em;
+  padding: 1em;
+  font-size: 18px;
+  font-family: Avenir;
+  margin: 0 em;
+  border-radius: 1em;
+  background-color: #d6c1c3;
+  display: flex;
+  width: 80%;
+}
+.myForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  width: 70%;
+  padding: 30px 0;
+  transition: 0.2s;
+}
+
+/*for videolist*/
+.videos-container {
+}
+.video-box {
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: 1380px;
+}
+.video-box h2 {
+  font-family: Avenir;
+  letter-spacing: 1px;
+  margin: 25px 0;
+}
+.video-box p {
+  font-family: Avenir;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+.video-preview {
+  background-color: #b6d6d0;
+  padding: 30px;
+  max-width: 400px;
+}
+.video-preview video {
+  width: 100%;
+}
+.video-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+.video-info-container {
+  position: relative;
+  top: 30px;
+  left: 60px;
+  text-align: left;
+  width: 150px;
+}
+
+.upload-video-container {
+  background: #ffffff;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  color: #000000;
+  border-radius: 1em;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.upload-video-container h2 {
+  font-family: Avenir;
 }

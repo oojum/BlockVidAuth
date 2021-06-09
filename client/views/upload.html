@@ -1,0 +1,31 @@
+<div class="upload-video-container">
+  <div class="myForm">
+    <form class="form" ng-show="isMetamaskInstalled">
+      <input
+        type="text"
+        style="margin: 1em; margin-left: 0em"
+        placeholder="Title"
+        ng-model="video.title"
+        required
+      />
+      <input
+        id="videoFile"
+        type="file"
+        style="margin: 1em; margin-left: 0em"
+        required
+      />
+      <input
+        type="text"
+        style="margin: 1em; margin-left: 0em"
+        value="{{video.userAddress}}"
+        required
+        readonly
+      />
+      <button type="submit" ng-click="submit()">Upload</button>
+    </form>
+  </div>
+
+  <div ng-show="!isMetamaskInstalled">
+    <h2 style="margin: 1em">Please install Metamask to continue.</h2>
+  </div>
+</div>

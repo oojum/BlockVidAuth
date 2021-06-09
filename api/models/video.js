@@ -1,18 +1,26 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../util/database");
 
 const Video = sequelize.define("video", {
   vidHash: {
-    type: Sequelize.STRING,
+    type: DataTypes.STRING,
     allowNull: false,
     primaryKey: true,
   },
   title: {
-    type: Sequelize.STRING,
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  isFake: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+  },
+  confidence: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   vidPath: {
-    type: Sequelize.STRING,
+    type: DataTypes.STRING,
     allowNull: false,
     unique: true,
   },

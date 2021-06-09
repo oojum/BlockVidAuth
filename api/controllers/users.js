@@ -1,8 +1,17 @@
 const { response } = require("express");
 const User = require("../models/user");
+const Video = require("../models/video");
+const { Sequelize } = require("../util/database");
 
 exports.getAllUsers = (req, res, next) => {
-  User.findAll().then((users) => {
+  User.findAll({
+    include: [
+      {
+        model: Video,
+        attributes: ["vidHash", "title"],
+      },
+    ],
+  }).then((users) => {
     const response = {
       users: users,
     };
@@ -32,7 +41,10 @@ exports.addUser = (req, res, next) => {
 exports.getUser = (req, res, next) => {
   User.findByPk(req.params.ethAddress)
     .then((user) => {
-      res.status(200).json(user);
+      const response = {
+        user: user,
+      };
+      res.status(200).json(response);
     })
     .catch((err) => {
       res.status(500).json(new Error("Internal error occurred."));
