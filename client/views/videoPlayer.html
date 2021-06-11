@@ -1,0 +1,12 @@
+<div class="one">
+    <div class="video-player-container">
+        <div class="video-player-box1">
+            <video controls (click) = "toggleVideo" #videoPlayer>
+                <source src="{{video.vidPath}}" type="video/mp4">
+                  Browser Not Supported
+              </video>
+              <h2>Video Title</h2>
+              <p>{{user.firstName}} {{user.lastName}}</p>
+        </div>
+    </div>
+</div>

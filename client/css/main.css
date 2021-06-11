@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -8,7 +9,7 @@ nav {
   display: flex;
   align-items: center;
   padding: 0.7%;
-  font-family: Avenir Next;
+  font-family: 'Nunito', sans-serif;
 }
 
 nav img {
@@ -23,7 +24,7 @@ nav ul {
 
   margin-right: 1em;
   margin-left: 1em;
-  font-family: Avenir Next;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1em;
@@ -46,7 +47,7 @@ nav ul li {
 }
 /*for about page*/
 p.about_DFD {
-  font-family: Avenir Next;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 1.7em;
@@ -61,8 +62,7 @@ p.about_DFD {
 p.about {
   width: 20em;
   height: 10em;
-
-  font-family: Avenir Next;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 1.5em;
@@ -143,7 +143,7 @@ div.form {
 }
 */
 .form h2 {
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 3em;
@@ -155,11 +155,11 @@ div.form {
   margin: 0.3em 0;
 }
 .form p {
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
 }
 .form input {
   font-size: 1em;
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
   background-color: #c4c4c4;
   padding: 1em 0.66em;
   width: 100%;
@@ -173,7 +173,7 @@ div.form {
 }
 .form label {
   font-size: 18px;
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
 }
 .form .button {
   display: flex;
@@ -253,18 +253,18 @@ div.form {
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   display: flex;
-  max-width: 100%;
+  max-width: 98%;
   margin: 20px;
   overflow: hidden;
   width: 1380px;
 }
 .video-box h2 {
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
   letter-spacing: 1px;
   margin: 25px 0;
 }
 .video-box p {
-  font-family: Avenir;
+  font-family: 'Nunito', sans-serif;
   letter-spacing: 1px;
   margin: 5px 0;
 }
@@ -308,3 +308,72 @@ div.form {
 .upload-video-container h2 {
   font-family: Avenir;
 }
+
+/*for video player*/
+.video-player-box{
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+.one{
+  background: #ffffff;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 500px;
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  color: #000000;
+  border-radius: 1em;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .5);
+}
+.video-player-container{
+  border-radius: 10px;
+  display: block; 
+  margin: 20px auto; 
+  width: 100%; 
+  max-width: 600px;
+}
+.video-player-box1 video{
+  margin-top: 4em;
+  display: block; 
+  width: 110%; 
+  overflow: hidden; 
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  cursor: hand; 
+  cursor: pointer; 
+  background-color: #b6d6d0; 
+}
+.video-player-box1 h2 {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1px;
+  margin: 25px 0;
+}
+.video-player-box1 p {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+/*for userlist*/
+.main-container {
+  padding: 30px;
+}
+.heading-container {
+  text-align: center;
+}
+.heading {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+}
+/*CHANGE VIDEO BOX max-width to 98%*/
